@@ -8,5 +8,5 @@ edition = "2021"
 [dependencies]
 tokio = { version = "1.39", features = ["time"] }
 async-trait = "0.1"
-sea-orm = "0.12"
+sea-orm = "1.0"
 futures = "0.3"

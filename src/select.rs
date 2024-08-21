@@ -9,6 +9,7 @@ use sea_orm::{
     Statement,
 };
 
+#[allow(clippy::wrong_self_convention)]
 pub trait FromSubquery {
     fn from_subquery(self, subquery: SelectStatement) -> Self;
 
@@ -41,11 +42,11 @@ where
             );
         }
 
-        let mut r = unsafe { std::mem::transmute::<_, _Select<E>>(self) };
+        let mut r = unsafe { std::mem::transmute::<Select<E>, _Select<E>>(self) };
 
         r.query.from_clear().from_subquery(subquery, alias);
 
-        unsafe { std::mem::transmute::<_, Select<E>>(r) }
+        unsafe { std::mem::transmute::<_Select<E>, Select<E>>(r) }
     }
 }
 
