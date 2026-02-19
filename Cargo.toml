@@ -6,7 +6,8 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-tokio = { version = "1.43", features = ["time"] }
+tokio = { version = "1", features = ["time"] }
 async-trait = "0.1"
 sea-orm = "1.1"
 futures = "0.3"
+trait-variant = "0.1"
